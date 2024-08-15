@@ -41,7 +41,7 @@ class MainDrawer extends StatelessWidget {
                   ),
                   child: Padding(
                     padding: EdgeInsets.symmetric(
-                      vertical: AppDimensions.padding16,
+                      vertical: AppDimensions.padding10,
                     ),
                     child: UserTile(
                       selected: true,

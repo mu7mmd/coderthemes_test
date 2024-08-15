@@ -3,10 +3,16 @@ import 'package:flutter/material.dart';
 import '../../../../core/constants/app_colors.dart';
 
 class HoverPopupMenuIcon extends StatefulWidget {
-  const HoverPopupMenuIcon(this.icon, {super.key, required this.popupMenu});
+  const HoverPopupMenuIcon({
+    super.key,
+    this.menuWidth = 150,
+    required this.childBuilder,
+    required this.items,
+  });
 
-  final IconData icon;
-  final Widget popupMenu;
+  final double menuWidth;
+  final Widget Function(Color) childBuilder;
+  final List<Widget> items;
 
   @override
   State<HoverPopupMenuIcon> createState() => _HoverPopupMenuIconState();
@@ -30,10 +36,25 @@ class _HoverPopupMenuIconState extends State<HoverPopupMenuIcon> {
         data: Theme.of(context).copyWith(
           highlightColor: Colors.transparent,
           splashColor: Colors.transparent,
+          hoverColor: Colors.transparent,
         ),
         child: PopupMenuButton(
           color: Colors.white,
-          itemBuilder: (_) => [PopupMenuItem(child: widget.popupMenu)],
+          padding: const EdgeInsets.all(0),
+          constraints: BoxConstraints(maxWidth: widget.menuWidth),
+          itemBuilder: (_) => [
+            PopupMenuItem(
+              mouseCursor: SystemMouseCursors.basic,
+              padding: const EdgeInsets.all(0),
+              child: SizedBox(
+                width: widget.menuWidth,
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: widget.items,
+                ),
+              ),
+            ),
+          ],
           onSelected: (_) {},
           onOpened: () => _isOpen = true,
           onCanceled: () {
@@ -42,10 +63,7 @@ class _HoverPopupMenuIconState extends State<HoverPopupMenuIcon> {
           },
           tooltip: '',
           offset: const Offset(0, 49),
-          child: Icon(
-            widget.icon,
-            color: _color,
-          ),
+          child: widget.childBuilder(_color),
         ),
       ),
     );

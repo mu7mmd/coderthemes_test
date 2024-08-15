@@ -67,7 +67,6 @@ class _SectionItemTileState extends ConsumerState<SectionItemTile> {
           ),
           onExpansionChanged: (expanded) {
             if (_hasChildren) {
-              print('$_index => $expanded');
               if (expanded) {
                 ref.read(menuItemExpandedProvider.notifier).state = _index;
               } else {
@@ -124,7 +123,6 @@ class _SectionItemTileState extends ConsumerState<SectionItemTile> {
   void _listenExpandItemState() {
     ref.listen(menuItemExpandedProvider, (previous, current) {
       if (current != _index && _controller.isExpanded) {
-        print(_index);
         _controller.collapse();
       }
     });
