@@ -14,6 +14,12 @@ class App extends StatelessWidget {
       theme: ThemeData.light().copyWith(
         primaryColor: AppColors.primary,
         scaffoldBackgroundColor: AppColors.background,
+        cardTheme: ThemeData.light().cardTheme.copyWith(
+              shape: const RoundedRectangleBorder(
+                borderRadius: BorderRadius.all(Radius.circular(4)),
+              ),
+              color: Colors.white,
+            ),
       ),
       home: const MainLayout(),
     );

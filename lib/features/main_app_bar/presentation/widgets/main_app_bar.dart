@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../../../../core/constants/app_assets.dart';
+import '../../../../core/constants/app_colors.dart';
 import '../../../../core/constants/app_dimensions.dart';
 import '../../../../core/widgets/hover_widget.dart';
 import '../../../../core/widgets/user_tile.dart';
@@ -80,7 +81,7 @@ class MainAppBar extends StatelessWidget {
                   const SizedBox(width: AppDimensions.padding16),
                   DecoratedBox(
                     decoration: BoxDecoration(
-                      color: Colors.grey.shade50,
+                      color: AppColors.lightGrey,
                       border: Border.symmetric(
                         vertical: BorderSide(color: Colors.grey.shade200),
                       ),

@@ -6,6 +6,7 @@ import '../../../../core/constants/key_enums.dart';
 import '../../../../core/extensions/constraints_extension.dart';
 import '../../../../core/providers/screen_type_provider.dart';
 import '../../../../core/widgets/screen_type_builder.dart';
+import '../../../dashboard/presentation/views/dashboard_view.dart';
 import '../../../main_app_bar/presentation/widgets/main_app_bar.dart';
 import '../../../main_drawer/presentation/widgets/main_drawer.dart';
 
@@ -53,10 +54,11 @@ class _MainBody extends StatelessWidget {
               );
             },
           ),
-          Expanded(
+          const Expanded(
             child: Column(
               children: [
                 MainAppBar(),
+                Expanded(child: DashboardView())
               ],
             ),
           )

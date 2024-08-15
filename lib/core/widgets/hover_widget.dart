@@ -5,11 +5,13 @@ import '../constants/app_colors.dart';
 class HoverWidget extends StatefulWidget {
   const HoverWidget({
     super.key,
+    this.cursor = SystemMouseCursors.click,
     this.hoverColor = AppColors.hoverColor,
     this.defaultColor = AppColors.content,
     required this.builder,
   });
 
+  final MouseCursor cursor;
   final Color hoverColor;
   final Color defaultColor;
   final Widget Function(Color, bool) builder;
@@ -31,7 +33,7 @@ class _HoverWidgetState extends State<HoverWidget> {
   @override
   Widget build(BuildContext context) {
     return MouseRegion(
-      cursor: SystemMouseCursors.click,
+      cursor: widget.cursor,
       onEnter: (_) => setState(() {
         _color = widget.hoverColor;
         _hovered = true;
