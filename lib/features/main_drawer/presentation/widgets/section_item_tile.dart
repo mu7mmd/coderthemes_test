@@ -37,7 +37,8 @@ class _SectionItemTileState extends ConsumerState<SectionItemTile> {
     return HoverWidget(
       builder: (color, _) {
         final focusColor = isSelected ? AppColors.hoverColor : color;
-        return ExpansionTile(
+        return 
+        ExpansionTile(
           controller: _controller,
           textColor: AppColors.hoverColor,
           iconColor: AppColors.hoverColor,

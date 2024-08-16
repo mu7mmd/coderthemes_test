@@ -21,6 +21,7 @@ class ChartStatisticsWidget extends StatelessWidget {
     return Expanded(
       child: Center(
         child: Column(
+          mainAxisAlignment: MainAxisAlignment.start,
           children: [
             Wrap(
               crossAxisAlignment: WrapCrossAlignment.center,
@@ -35,6 +36,7 @@ class ChartStatisticsWidget extends StatelessWidget {
             ),
             const SizedBox(height: AppDimensions.padding16),
             Wrap(
+              alignment: WrapAlignment.center,
               children: [
                 Text(
                   '$value ',

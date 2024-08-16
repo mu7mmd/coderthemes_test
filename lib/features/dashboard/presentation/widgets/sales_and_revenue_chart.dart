@@ -35,8 +35,8 @@ class SalesAndRevenueChart extends StatelessWidget {
     ChartPointModel(sales: 31, revenue: 352, date: '08 Jan'),
     ChartPointModel(sales: 22, revenue: 752, date: '09 Jan'),
     ChartPointModel(sales: 22, revenue: 320, date: '10 Jan'),
-    ChartPointModel(sales: 12, revenue: 257, date: '11 Jan'),
-    ChartPointModel(sales: 16, revenue: 160, date: '12 Jan'),
+    ChartPointModel(sales: 12, revenue: 350, date: '11 Jan'),
+    ChartPointModel(sales: 16, revenue: 246, date: '12 Jan'),
   ];
 
   @override
@@ -79,20 +79,7 @@ class SalesAndRevenueChart extends StatelessWidget {
                                 color: Colors.black12,
                                 dashArray: const [3, 3],
                               ),
-                              data: const [
-                                400,
-                                425,
-                                518,
-                                456,
-                                736,
-                                765,
-                                520,
-                                345,
-                                456,
-                                755,
-                                366,
-                                278
-                              ],
+                              data: _chartPoints.map((p) => p.revenue).toList(),
                             ),
                           ),
                           Padding(

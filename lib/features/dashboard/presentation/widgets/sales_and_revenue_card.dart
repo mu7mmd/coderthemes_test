@@ -28,6 +28,7 @@ class SalesAndRevenueCard extends StatelessWidget {
               ),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
+                crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   ChartStatisticsWidget(
                     title: 'Current Week',
