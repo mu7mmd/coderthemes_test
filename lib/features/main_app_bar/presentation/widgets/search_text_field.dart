@@ -9,6 +9,7 @@ class SearchTextField extends StatelessWidget {
   Widget build(BuildContext context) {
     return SizedBox(
       height: 35,
+      width: 235,
       child: TextField(
         cursorHeight: 16,
         cursorWidth: 1,

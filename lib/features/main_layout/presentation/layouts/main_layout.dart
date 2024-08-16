@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
-import '../../../../core/constants/app_constants.dart';
+import '../../../../core/extensions/box_constraint_extension.dart';
 import '../../../../core/constants/key_enums.dart';
-import '../../../../core/extensions/constraints_extension.dart';
 import '../../../../core/providers/screen_type_provider.dart';
-import '../../../../core/widgets/screen_type_builder.dart';
 import '../../../dashboard/presentation/views/dashboard_view.dart';
 import '../../../main_app_bar/presentation/widgets/main_app_bar.dart';
-import '../../../main_drawer/presentation/widgets/main_drawer.dart';
+import '../../../main_drawer/presentation/widgets/collapsed_drawer_hover.dart';
+import '../../../main_drawer/presentation/widgets/expanded_drawer.dart';
+import '../../../main_drawer/presentation/widgets/responsive_drawer.dart';
 
 class MainLayout extends ConsumerWidget {
   const MainLayout({super.key});
@@ -23,14 +23,17 @@ class MainLayout extends ConsumerWidget {
     );
   }
 
-  // Must be future to not update when rebuilding
-  Future<void> _changeScreenType(
+  void _changeScreenType(
     WidgetRef ref,
-    ScreenSizeType screenType,
-  ) async {
+    ScreenType screenType,
+  ) {
     final type = ref.read(screenTypeProvider);
     if (type != screenType) {
-      ref.read(screenTypeProvider.notifier).state = screenType;
+      // Must be future to not update when rebuilding
+
+      Future.delayed(Duration.zero, () {
+        ref.read(screenTypeProvider.notifier).state = screenType;
+      });
     }
   }
 }
@@ -40,28 +43,25 @@ class _MainBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      drawer: const MainDrawer(),
-      body: Row(
+    return const Scaffold(
+      drawer: ExpandedDrawer(),
+      body: Stack(
+        alignment: AlignmentDirectional.centerStart,
         children: [
-          ScreenTypeBuilder(
-            builder: (screenType) {
-              return AnimatedSize(
-                duration: AppConstants.animationDuration,
-                child: screenType != ScreenSizeType.mobile
-                    ? const MainDrawer()
-                    : const SizedBox.shrink(),
-              );
-            },
+          Row(
+            children: [
+              ResponsiveDrawer(),
+              Expanded(
+                child: Column(
+                  children: [
+                    MainAppBar(),
+                    Expanded(child: DashboardView()),
+                  ],
+                ),
+              )
+            ],
           ),
-          const Expanded(
-            child: Column(
-              children: [
-                MainAppBar(),
-                Expanded(child: DashboardView())
-              ],
-            ),
-          )
+          CollapsedDrawerHover()
         ],
       ),
     );

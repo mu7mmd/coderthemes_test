@@ -21,7 +21,7 @@ class MainDrawer extends StatelessWidget {
       child: Column(
         children: [
           Container(
-            height: AppDimensions.appBarHeight,
+            height: AppDimensions.appBarSize,
             color: Colors.white,
             alignment: Alignment.center,
             child: Image.asset(

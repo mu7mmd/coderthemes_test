@@ -1,10 +1,12 @@
-enum ScreenSizeType {
-  mobile(600),
-  smallTablet(800),
-  largeTablet(1000),
-  desktop(null);
+enum ScreenType {
+  smallMobile(575),
+  largeMobile(765),
+  smallTablet(995),
+  largeTablet(1140),
+  smallDesktop(1402),
+  largeDesktop(null);
 
-  const ScreenSizeType(this.breakPoint);
+  const ScreenType(this.breakPoint);
 
   final double? breakPoint;
 }

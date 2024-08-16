@@ -4,7 +4,9 @@ import 'package:syncfusion_flutter_charts/sparkcharts.dart';
 import '../../../../core/constants/app_colors.dart';
 import '../../../../core/constants/app_constants.dart';
 import '../../../../core/constants/app_dimensions.dart';
+import '../../../../core/constants/key_enums.dart';
 import '../../../../core/constants/text_styles.dart';
+import '../../../../core/screen_type_builder.dart';
 import '../../domain/models/chart_point_model.dart';
 import '../models/sales_data.dart';
 import 'chart_measure_line.dart';
@@ -136,18 +138,46 @@ class SalesAndRevenueChart extends StatelessWidget {
           padding: const EdgeInsets.symmetric(
             horizontal: AppDimensions.padding50,
           ),
-          child: Row(
-            children: List.generate(
-              _chartPoints.length,
-              (index) => Expanded(
-                child: Text(
-                  _chartPoints[index].date,
-                  style: TextStyles.xSmallRegular,
-                  textAlign: TextAlign.center,
-                  overflow: TextOverflow.ellipsis,
-                ),
-              ),
-            ),
+          child: ScreenTypeBuilder(
+            builder: (type) {
+              if (type != ScreenType.smallMobile) {
+                return Row(
+                  children: List.generate(
+                    _chartPoints.length,
+                    (index) {
+                      return Expanded(
+                        child: Text(
+                          _chartPoints[index].date,
+                          style: TextStyles.xSmallRegular,
+                          textAlign: TextAlign.center,
+                          overflow: TextOverflow.ellipsis,
+                        ),
+                      );
+                    },
+                  ),
+                );
+              } else {
+                return Row(
+                  children: List.generate(
+                    _chartPoints.length,
+                    (index) {
+                      if (index % 2 == 0) {
+                        return Expanded(
+                          child: Text(
+                            _chartPoints[index].date,
+                            style: TextStyles.xSmallRegular,
+                            textAlign: TextAlign.center,
+                            overflow: TextOverflow.ellipsis,
+                          ),
+                        );
+                      } else {
+                        return const SizedBox.shrink();
+                      }
+                    },
+                  ),
+                );
+              }
+            },
           ),
         ),
         const SizedBox(height: AppDimensions.padding16),

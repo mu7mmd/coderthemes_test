@@ -23,8 +23,9 @@ class ChartStatisticsWidget extends StatelessWidget {
         child: Column(
           children: [
             Wrap(
+              crossAxisAlignment: WrapCrossAlignment.center,
               children: [
-                const Icon(Icons.circle_outlined, size: 14),
+                const Icon(Icons.circle_outlined, size: 12),
                 Text(
                   ' $title',
                   style: TextStyles.smallRegular,

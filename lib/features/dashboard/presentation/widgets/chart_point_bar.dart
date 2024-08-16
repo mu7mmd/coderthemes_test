@@ -46,8 +46,8 @@ class _ChartPointBarState extends State<ChartPointBar> {
                 children: [
                   AnimatedContainer(
                     height: _height,
+                    margin: const EdgeInsets.symmetric(horizontal: 5),
                     duration: const Duration(milliseconds: 600),
-                    width: 16,
                     decoration: BoxDecoration(
                       border: Border.all(color: AppColors.secondary),
                       color: isHovered

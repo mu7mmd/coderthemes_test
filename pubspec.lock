@@ -49,14 +49,6 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.0.8"
-  equatable:
-    dependency: transitive
-    description:
-      name: equatable
-      sha256: c2b87cb7756efdf69892005af546c56c0b5037f54d2a88269b4f347a505e3ca2
-      url: "https://pub.dev"
-    source: hosted
-    version: "2.0.5"
   fake_async:
     dependency: transitive
     description:
@@ -65,21 +57,13 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.3.1"
-  fl_chart:
-    dependency: "direct main"
-    description:
-      name: fl_chart
-      sha256: d0f0d49112f2f4b192481c16d05b6418bd7820e021e265a3c22db98acf7ed7fb
-      url: "https://pub.dev"
-    source: hosted
-    version: "0.68.0"
   flutter:
     dependency: "direct main"
     description: flutter
     source: sdk
     version: "0.0.0"
   flutter_hooks:
-    dependency: transitive
+    dependency: "direct main"
     description:
       name: flutter_hooks
       sha256: cde36b12f7188c85286fba9b38cc5a902e7279f36dd676967106c041dc9dde70
@@ -256,6 +240,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "26.2.9"
+  syncfusion_flutter_gauges:
+    dependency: "direct main"
+    description:
+      name: syncfusion_flutter_gauges
+      sha256: defdbf39023d2e0c3abfe6ec19f16dad94722e4d6f5336b9eb756ed843f3d4be
+      url: "https://pub.dev"
+    source: hosted
+    version: "26.2.9"
   term_glyph:
     dependency: transitive
     description:
@@ -288,6 +280,22 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "14.2.1"
+  vph_common_widgets:
+    dependency: transitive
+    description:
+      name: vph_common_widgets
+      sha256: "5b4994af8f147e506408246b5d58a92baf368c4e05dff96f592b4d907205c6ca"
+      url: "https://pub.dev"
+    source: hosted
+    version: "0.0.2"
+  vph_web_date_picker:
+    dependency: "direct main"
+    description:
+      name: vph_web_date_picker
+      sha256: "3c2a59159452d8644661393a65cab2fab28cc9436153bbc1175fc89f4ad05346"
+      url: "https://pub.dev"
+    source: hosted
+    version: "0.0.7"
 sdks:
   dart: ">=3.4.0 <4.0.0"
   flutter: ">=3.18.0-18.0.pre.54"

@@ -1,11 +1,12 @@
 abstract final class AppDimensions {
   // Sizes
-  static const double appBarHeight = 70;
+  static const double appBarSize = 70;
 
   // Paddings
   static const double padding4 = 4;
   static const double padding8 = 8;
   static const double padding10 = 10;
+  static const double padding12 = 12;
   static const double padding16 = 16;
   static const double padding20 = 20;
   static const double padding24 = 24;
