@@ -19,7 +19,7 @@ class HoverPopupMenuIcon extends StatefulWidget {
 }
 
 class _HoverPopupMenuIconState extends State<HoverPopupMenuIcon> {
-  Color _color = AppColors.content;
+  Color _color = AppColors.black54;
 
   bool _isOpen = false;
 
@@ -71,7 +71,7 @@ class _HoverPopupMenuIconState extends State<HoverPopupMenuIcon> {
 
   void _setHover() => _setColor(AppColors.primary);
 
-  void _setUnHover() => _setColor(AppColors.content);
+  void _setUnHover() => _setColor(AppColors.black54);
 
   void _setColor(Color color) {
     setState(() => _color = color);

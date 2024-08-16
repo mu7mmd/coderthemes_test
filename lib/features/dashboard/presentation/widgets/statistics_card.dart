@@ -5,7 +5,7 @@ import '../../../../core/constants/app_colors.dart';
 import '../../../../core/constants/app_dimensions.dart';
 import '../../../../core/constants/text_styles.dart';
 import '../../../../core/widgets/highlight_card.dart';
-import '../models/statistic_model.dart';
+import '../../domain/models/statistic_model.dart';
 
 class StatisticsCard extends ConsumerStatefulWidget {
   const StatisticsCard(this.static, {super.key});
@@ -38,7 +38,7 @@ class _StatisticsCardState extends ConsumerState<StatisticsCard> {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    Text(_static.title, style: TextStyles.mediumRegular),
+                    Text(_static.title, style: TextStyles.mediumBold),
                     Text(_static.value, style: TextStyles.headline3Bold),
                     Row(
                       children: [

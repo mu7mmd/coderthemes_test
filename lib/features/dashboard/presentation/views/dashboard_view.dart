@@ -6,7 +6,7 @@ import '../../../../core/constants/app_dimensions.dart';
 import '../../../../core/constants/key_enums.dart';
 import '../../../../core/constants/text_styles.dart';
 import '../../../../core/widgets/screen_type_builder.dart';
-import '../models/statistic_model.dart';
+import '../../domain/models/statistic_model.dart';
 import '../widgets/date_picker_field.dart';
 import '../widgets/sales_and_revenue_card.dart';
 import '../widgets/statistics_card.dart';

@@ -5,7 +5,7 @@ import '../../../../core/extensions/box_constraint_extension.dart';
 import '../../../../core/constants/key_enums.dart';
 import '../../../../core/providers/screen_type_provider.dart';
 import '../../../dashboard/presentation/views/dashboard_view.dart';
-import '../../../main_app_bar/presentation/widgets/main_app_bar.dart';
+import '../../../main_app_bar/presentation/views/main_app_bar.dart';
 import '../../../main_drawer/presentation/widgets/collapsed_drawer_hover.dart';
 import '../../../main_drawer/presentation/widgets/expanded_drawer.dart';
 import '../../../main_drawer/presentation/widgets/responsive_drawer.dart';

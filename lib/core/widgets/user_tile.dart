@@ -28,12 +28,12 @@ class UserTile extends StatelessWidget {
         onTap: () {},
         selected: true,
         selectedColor: foregroundColor,
-        leading:  CircleAvatar(
+        leading: CircleAvatar(
           radius: avatarRadius,
           backgroundImage: const AssetImage(AppAssets.avatar),
         ),
         title: const Text('Doris Larson', style: TextStyles.mediumBold),
-        subtitle: const Text('Founder'),
+        subtitle: const Text('Founder', style: TextStyles.smallBold),
         trailing: trailing,
       ),
     );

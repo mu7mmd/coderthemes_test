@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../../../../core/constants/app_dimensions.dart';
 import '../../../../core/constants/text_styles.dart';
-import '../models/sales_data.dart';
+import '../../domain/models/sales_data.dart';
 
 class ChartMeasureLine extends StatelessWidget {
   const ChartMeasureLine(this.data, {super.key});

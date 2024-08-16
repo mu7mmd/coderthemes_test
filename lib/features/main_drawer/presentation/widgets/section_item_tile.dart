@@ -6,8 +6,8 @@ import '../../../../core/constants/app_constants.dart';
 import '../../../../core/constants/app_dimensions.dart';
 import '../../../../core/constants/text_styles.dart';
 import '../../../../core/widgets/hover_widget.dart';
-import '../../controllers/providers/menu_item_expanded_provider.dart';
-import '../../controllers/providers/selected_menu_item_provider.dart';
+import '../controllers/providers/menu_item_expanded_provider.dart';
+import '../controllers/providers/selected_menu_item_provider.dart';
 import '../../domain/models/section_item_model.dart';
 
 class SectionItemTile extends ConsumerStatefulWidget {

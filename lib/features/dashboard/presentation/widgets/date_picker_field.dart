@@ -1,4 +1,3 @@
-import 'package:coderthemes_test/core/constants/app_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:vph_web_date_picker/vph_web_date_picker.dart';
 
@@ -33,7 +32,7 @@ class _DatePickerFieldState extends State<DatePickerField> {
             height: 40,
             child: TextField(
               controller: _controller,
-              style: TextStyles.mediumRegular,
+              style: TextStyles.mediumBold,
               decoration: const InputDecoration(
                 hoverColor: Colors.transparent,
                 contentPadding: EdgeInsets.symmetric(

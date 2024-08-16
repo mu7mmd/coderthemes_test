@@ -10,6 +10,7 @@ class LanguageTile extends StatelessWidget {
     this.space = 8,
     required this.color,
     this.showName = true,
+    this.style = TextStyles.mediumMedium,
   });
 
   final String icon;
@@ -17,6 +18,7 @@ class LanguageTile extends StatelessWidget {
   final double space;
   final Color color;
   final bool showName;
+  final TextStyle style;
 
   @override
   Widget build(BuildContext context) {
@@ -24,8 +26,8 @@ class LanguageTile extends StatelessWidget {
       children: [
         Image.asset(icon, width: 18),
         SizedBox(width: space),
-        if(showName)
-        Text(name, style: TextStyles.mediumMedium.copyWith(color: color))
+        if (showName)
+          Text(name, style: style.copyWith(color: color))
       ],
     );
   }

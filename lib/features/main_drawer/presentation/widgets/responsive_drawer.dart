@@ -3,7 +3,7 @@ import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 import '../../../../core/extensions/screen_type_extension.dart';
 import '../../../../core/providers/screen_type_provider.dart';
-import '../../controllers/notifiers/drawer_notifier.dart';
+import '../controllers/notifiers/drawer_notifier.dart';
 import 'collapsed_drawer.dart';
 import 'expanded_drawer.dart';
 

@@ -4,7 +4,7 @@ import 'package:hooks_riverpod/hooks_riverpod.dart';
 import '../../../../core/constants/app_assets.dart';
 import '../../../../core/constants/app_colors.dart';
 import '../../../../core/constants/app_dimensions.dart';
-import '../../controllers/providers/selected_menu_item_provider.dart';
+import '../controllers/providers/selected_menu_item_provider.dart';
 import '../../data/drawer_items.dart';
 import 'drawer_layout.dart';
 

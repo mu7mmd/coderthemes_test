@@ -14,7 +14,7 @@ class CityTotalSales extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Text(city),
+        Text(city, style: TextStyles.mediumBold),
         Row(
           children: [
             Expanded(

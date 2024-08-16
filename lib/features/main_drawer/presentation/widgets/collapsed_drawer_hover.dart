@@ -7,8 +7,8 @@ import '../../../../core/constants/text_styles.dart';
 import '../../../../core/providers/screen_type_provider.dart';
 import '../../../../core/utils/custom_shadow.dart';
 import '../../../../core/widgets/hover_widget.dart';
-import '../../controllers/notifiers/drawer_notifier.dart';
-import '../../controllers/providers/selected_menu_item_provider.dart';
+import '../controllers/notifiers/drawer_notifier.dart';
+import '../controllers/providers/selected_menu_item_provider.dart';
 import '../../data/drawer_items.dart';
 
 class CollapsedDrawerHover extends ConsumerWidget {
@@ -47,7 +47,8 @@ class CollapsedDrawerHover extends ConsumerWidget {
                                   Container(
                                     height: 44,
                                     width: _width,
-                                    color: Colors.blueGrey,
+                                    color:
+                                        const Color.fromARGB(255, 23, 23, 28),
                                     padding: const EdgeInsets.symmetric(
                                       horizontal: AppDimensions.padding24,
                                     ),
@@ -83,7 +84,6 @@ class CollapsedDrawerHover extends ConsumerWidget {
                                   if (item.hasChildren)
                                     Container(
                                       width: _width - AppDimensions.appBarSize,
-                                      height: 100,
                                       padding: const EdgeInsets.symmetric(
                                         horizontal: AppDimensions.padding8,
                                       ),

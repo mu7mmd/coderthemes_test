@@ -1,4 +1,5 @@
 import 'package:coderthemes_test/core/constants/key_enums.dart';
+import 'package:coderthemes_test/core/constants/text_styles.dart';
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
@@ -10,13 +11,13 @@ import '../../../../core/widgets/hover_widget.dart';
 import '../../../../core/widgets/user_tile.dart';
 import '../../../../core/screen_type_builder.dart';
 import '../../../../core/utils/custom_shadow.dart';
-import '../../../main_drawer/controllers/notifiers/drawer_notifier.dart';
-import 'hover_icon.dart';
-import 'hover_popup_menu_icon.dart';
-import 'language_popup_item.dart';
-import 'language_tile.dart';
-import 'notification_app_bar_icon.dart';
-import 'search_text_field.dart';
+import '../../../main_drawer/presentation/controllers/notifiers/drawer_notifier.dart';
+import '../widgets/hover_icon.dart';
+import '../widgets/hover_popup_menu_icon.dart';
+import '../widgets/language_popup_item.dart';
+import '../widgets/language_tile.dart';
+import '../widgets/notification_app_bar_icon.dart';
+import '../widgets/search_text_field.dart';
 
 class MainAppBar extends ConsumerWidget {
   const MainAppBar({super.key});
@@ -85,6 +86,7 @@ class MainAppBar extends ConsumerWidget {
                             space: 4,
                             color: color,
                             showName: type.isMiddlePoint,
+                            style: TextStyles.mediumBold,
                           ),
                           if (type != ScreenType.smallMobile)
                             Icon(
@@ -126,15 +128,19 @@ class MainAppBar extends ConsumerWidget {
                             if (type.isMiddlePoint) {
                               return SizedBox(
                                 width: 160,
-                                child: HoverWidget(builder: (color, _) {
-                                  return UserTile(
-                                    avatarRadius: 17,
-                                    contentPadding: const EdgeInsets.symmetric(
-                                      horizontal: AppDimensions.padding8,
-                                    ),
-                                    foregroundColor: color,
-                                  );
-                                }),
+                                child: HoverWidget(
+                                  defaultColor: AppColors.black54,
+                                  builder: (color, _) {
+                                    return UserTile(
+                                      avatarRadius: 17,
+                                      contentPadding:
+                                          const EdgeInsets.symmetric(
+                                        horizontal: AppDimensions.padding8,
+                                      ),
+                                      foregroundColor: color,
+                                    );
+                                  },
+                                ),
                               );
                             } else {
                               return const SizedBox(

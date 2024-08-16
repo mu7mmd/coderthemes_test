@@ -8,7 +8,7 @@ import '../../../../core/constants/key_enums.dart';
 import '../../../../core/constants/text_styles.dart';
 import '../../../../core/screen_type_builder.dart';
 import '../../domain/models/chart_point_model.dart';
-import '../models/sales_data.dart';
+import '../../domain/models/sales_data.dart';
 import 'chart_measure_line.dart';
 import 'chart_point_bar.dart';
 import 'point_type_widget.dart';

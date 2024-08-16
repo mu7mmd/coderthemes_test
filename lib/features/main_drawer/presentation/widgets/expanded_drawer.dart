@@ -6,7 +6,7 @@ import '../../../../core/constants/app_assets.dart';
 import '../../../../core/constants/app_dimensions.dart';
 import '../../../../core/providers/screen_type_provider.dart';
 import '../../../../core/widgets/user_tile.dart';
-import '../../controllers/notifiers/drawer_notifier.dart';
+import '../controllers/notifiers/drawer_notifier.dart';
 import '../../data/drawer_items.dart';
 import 'drawer_layout.dart';
 import 'menu_section_widget.dart';

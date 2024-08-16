@@ -1,5 +1,6 @@
 import 'package:flutter/widgets.dart';
 
+import '../../../../core/constants/app_colors.dart';
 import '../../../../core/widgets/hover_widget.dart';
 
 class HoverIcon extends StatelessWidget {
@@ -13,6 +14,7 @@ class HoverIcon extends StatelessWidget {
     return GestureDetector(
       onTap: onTap,
       child: HoverWidget(
+        defaultColor: AppColors.black54,
         builder: (color, _) => Icon(
           icon,
           color: color,

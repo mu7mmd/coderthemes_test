@@ -1,9 +1,9 @@
 import 'package:flutter/widgets.dart' show BuildContext;
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
-import '../../../../core/extensions/screen_type_extension.dart';
-import '../../../../core/extensions/build_context_extension.dart';
-import '../../../../core/providers/screen_type_provider.dart';
+import '../../../../../core/extensions/screen_type_extension.dart';
+import '../../../../../core/extensions/build_context_extension.dart';
+import '../../../../../core/providers/screen_type_provider.dart';
 
 final class DrawerNotifier extends StateNotifier<bool> {
   DrawerNotifier(this._ref, super.state);
