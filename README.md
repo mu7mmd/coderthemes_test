@@ -1,16 +1,49 @@
-# coderthemes_test
+![Logo](https://coderthemes.com/jidox/layouts/assets/images/logo-dark.png)
 
-A new Flutter project.
+# Coderthemes Test
 
-## Getting Started
+A responsive and animated website dashboard designed to adapt to all screen sizes: mobile, tablet, and desktop.
 
-This project is a starting point for a Flutter application.
+## Features
 
-A few resources to get you started if this is your first Flutter project:
+- Supports 6 levels of screen sizes for optimal responsiveness:
+  - **Small Mobile**: Under 575px
+  - **Large Mobile**: Under 765px
+  - **Small Tablet**: Under 995px
+  - **Large Tablet**: Under 1140px
+  - **Small Desktop**: Under 1402px
+  - **Large Desktop**: 1402px and above
+- Simple animations enhance user experience
+- Beautiful design for all screen sizes
+- Displays charts and statistics data
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+## Inspiration
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+This project draws direct design inspiration from [Coderthemes](https://coderthemes.com/jidox/layouts/index.html).
+
+## Designed For
+
+This test project is designed for:
+
+- [Yemen Soft](https://yemensoft.com/en).
+
+## Packages Used
+
+```yaml
+hooks_riverpod: ^2.5.1
+syncfusion_flutter_charts: ^26.2.9
+syncfusion_flutter_gauges: ^26.2.9
+vph_web_date_picker: ^0.0.7
+```
+
+## Contributing
+
+This project is for testing purposes, and contributions are not required.
+
+## Authors
+
+- [Mohammad Alamoudi (@mu7mmd)](https://www.github.com/mu7mmd)
+
+## 🔗 Links
+
+[![LinkedIn](https://img.shields.io/badge/linkedin-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/3mdy)
