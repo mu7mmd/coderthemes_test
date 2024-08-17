@@ -36,6 +36,15 @@ syncfusion_flutter_gauges: ^26.2.9
 vph_web_date_picker: ^0.0.7
 ```
 
+## Software Architecture
+
+This project structured based on clean architecture principle.
+
+
+## Task Due Date
+
+⏰ Task Due Date: August 14, 2024 - August 17, 2024
+
 ## Contributing
 
 This project is for testing purposes, and contributions are not required.
