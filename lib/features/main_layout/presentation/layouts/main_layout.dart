@@ -33,7 +33,6 @@ class MainLayout extends ConsumerWidget {
     final type = ref.read(screenTypeProvider);
     if (type != screenType) {
       // Must be future to not update when rebuilding
-
       Future.delayed(Duration.zero, () {
         ref.read(screenTypeProvider.notifier).state = screenType;
       });

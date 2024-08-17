@@ -34,7 +34,7 @@ class ResponsiveDrawer extends ConsumerWidget {
     ref.listen(screenTypeProvider, (previous, current) {
       if (previous!.isDesktop && current.isTablet) {
         ref.read(drawerNotifierProvider.notifier).collapseDrawer();
-      } else if (previous.isTablet && current.isDesktop) {
+      } else if (!previous.isDesktop && current.isDesktop) {
         ref.read(drawerNotifierProvider.notifier).expandDrawer();
       }
     });
