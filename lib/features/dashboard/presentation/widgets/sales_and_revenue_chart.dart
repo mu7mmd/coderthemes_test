@@ -86,17 +86,29 @@ class SalesAndRevenueChart extends StatelessWidget {
                             padding: const EdgeInsets.symmetric(
                               horizontal: AppDimensions.padding20,
                             ),
-                            child: Row(
-                              children: [
-                                for (int i = 0;
-                                    i < _chartPoints.length;
-                                    i++) ...[
-                                  ChartPointBar(_chartPoints[i]),
-                                  if (i != _chartPoints.length - 1)
-                                    const Spacer()
-                                ]
-                              ],
-                            ),
+                            child: ScreenTypeBuilder(builder: (type) {
+                              return Row(
+                                children: [
+                                  if (type != ScreenType.smallMobile)
+                                    for (int i = 0;
+                                        i < _chartPoints.length;
+                                        i++) ...[
+                                      ChartPointBar(_chartPoints[i]),
+                                      if (i != _chartPoints.length - 1)
+                                        const Spacer()
+                                    ]
+                                  else
+                                    for (int i = 0;
+                                        i < _chartPoints.length;
+                                        i++)
+                                      if (i % 2 == 0) ...[
+                                        ChartPointBar(_chartPoints[i]),
+                                        if (i != _chartPoints.length - 2)
+                                          const Spacer()
+                                      ]
+                                ],
+                              );
+                            }),
                           ),
                           Column(
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,

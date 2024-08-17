@@ -50,4 +50,9 @@ abstract final class TextStyles {
     fontSize: 11,
     fontWeight: FontWeight.w700,
   );
+
+    static const TextStyle xxSmallRegular = TextStyle(
+    fontSize: 10,
+    fontWeight: FontWeight.w400,
+  );
 }
