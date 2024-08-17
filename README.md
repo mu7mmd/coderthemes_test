@@ -34,6 +34,7 @@ hooks_riverpod: ^2.5.1
 syncfusion_flutter_charts: ^26.2.9
 syncfusion_flutter_gauges: ^26.2.9
 vph_web_date_picker: ^0.0.7
+flutter_native_splash: ^2.4.1
 ```
 
 ## Software Architecture
