@@ -21,10 +21,10 @@ class ChartStatisticsWidget extends StatelessWidget {
     return Expanded(
       child: Center(
         child: Column(
-          mainAxisAlignment: MainAxisAlignment.start,
           children: [
             Wrap(
               crossAxisAlignment: WrapCrossAlignment.center,
+              alignment: WrapAlignment.center,
               children: [
                 const Icon(Icons.circle_outlined, size: 12),
                 Text(

@@ -30,7 +30,7 @@ class CollapsedDrawer extends StatelessWidget {
                   return Icon(
                     item.icon,
                     size: 20,
-                    color: selectedIndex == j
+                    color: selectedIndex.item == j
                         ? AppColors.primary
                         : AppColors.content,
                   );

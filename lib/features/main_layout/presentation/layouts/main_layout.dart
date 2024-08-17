@@ -61,16 +61,21 @@ class _MainBody extends StatelessWidget {
                     Expanded(
                       child: Consumer(
                         builder: (_, ref, __) {
-                          final index = ref.watch(selectedMenuItemProvider);
-                          if (index == 0) {
+                          final indexes = ref.watch(selectedMenuItemProvider);
+                          final itemIndex = indexes.item;
+                          if (indexes.item == 0) {
                             return const DashboardView();
                           } else {
+                            final item = drawerItems.first.items[itemIndex];
+                            final childIndex = indexes.child;
                             return Center(
                               child: Text(
                                 // Default first cause we using only on section
-                                // if having more the selected page index method 
+                                // if having more the selected page index method
                                 // will change
-                                drawerItems.first.items[index].title,
+                                childIndex == null
+                                    ? item.title
+                                    : item.children![childIndex],
                                 style: TextStyles.headline3Bold,
                               ),
                             );

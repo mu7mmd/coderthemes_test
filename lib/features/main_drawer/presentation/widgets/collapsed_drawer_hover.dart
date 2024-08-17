@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
+import '../../../../core/constants/app_colors.dart';
 import '../../../../core/extensions/screen_type_extension.dart';
 import '../../../../core/constants/app_dimensions.dart';
 import '../../../../core/constants/text_styles.dart';
@@ -29,13 +30,12 @@ class CollapsedDrawerHover extends ConsumerWidget {
               child: Column(
                 children: [
                   for (final section in drawerItems)
-                    ...List.generate(section.items.length, (index) {
-                      final item = section.items[index];
+                    ...List.generate(section.items.length, (itemIndex) {
+                      final item = section.items[itemIndex];
                       return GestureDetector(
                         onTap: () {
                           if (!item.hasChildren) {
-                            ref.read(selectedMenuItemProvider.notifier).state =
-                                index;
+                            _changeSelectedItem(ref, itemIndex);
                           }
                         },
                         child: HoverWidget(
@@ -95,25 +95,12 @@ class CollapsedDrawerHover extends ConsumerWidget {
                                         crossAxisAlignment:
                                             CrossAxisAlignment.start,
                                         children: List.generate(
-                                          item.children!.length,
-                                          (index) => Padding(
-                                            padding: const EdgeInsets.symmetric(
-                                              vertical: AppDimensions.padding8,
-                                            ),
-                                            child: HoverWidget(
-                                              builder: (color, _) {
-                                                return Text(
-                                                  item.children![index],
-                                                  style: TextStyles
-                                                      .mediumRegular
-                                                      .copyWith(
-                                                    color: color,
-                                                  ),
-                                                );
-                                              },
-                                            ),
-                                          ),
-                                        ),
+                                            item.children!.length,
+                                            (childIndex) => _MenuItemChild(
+                                                  itemIndex,
+                                                  childIndex,
+                                                  item.children![childIndex],
+                                                )),
                                       ),
                                     )
                                 ],
@@ -135,5 +122,46 @@ class CollapsedDrawerHover extends ConsumerWidget {
       );
     }
     return const SizedBox.shrink();
+  }
+
+  void _changeSelectedItem(WidgetRef ref, int item, [int? child]) {
+    ref.read(selectedMenuItemProvider.notifier).state =
+        (item: item, child: child);
+  }
+}
+
+class _MenuItemChild extends ConsumerWidget {
+  const _MenuItemChild(this.itemIndex, this.childIndex, this.child);
+
+  final int itemIndex;
+  final int childIndex;
+  final String child;
+
+  @override
+  Widget build(BuildContext context, WidgetRef ref) {
+    return Padding(
+      padding: const EdgeInsets.symmetric(
+        vertical: AppDimensions.padding8,
+      ),
+      child: GestureDetector(
+        onTap: () {
+          ref.read(selectedMenuItemProvider.notifier).state =
+              (item: itemIndex, child: childIndex);
+        },
+        child: HoverWidget(
+          builder: (color, _) {
+            return Consumer(builder: (_, WidgetRef ref, __) {
+              final index = ref.watch(selectedMenuItemProvider).child;
+              return Text(
+                child,
+                style: TextStyles.mediumRegular.copyWith(
+                  color: index != childIndex ? color : AppColors.primary,
+                ),
+              );
+            });
+          },
+        ),
+      ),
+    );
   }
 }
